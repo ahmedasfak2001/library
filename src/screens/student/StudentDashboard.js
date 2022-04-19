@@ -54,11 +54,11 @@ const StudentDashboard = ({ navigation, route }) => {
                     color={'black'}
                 />
             </View>
-            <View style={{ flex: 8, backgroundColor: '#f5f5f5', alignItems: 'center' }}>
+            <View style={{ flex: 8, backgroundColor: '#f5f5f5', alignItems: 'center',  }}>
                 <ScrollView>
                     {semDetails.map((post) => (
                         <TouchableOpacity onPress={() => navigation.navigate('StudentSemPageDetails', {Sem_id: post.Sem_id})}>
-                            <View style={{ borderColor: 'black', borderRadius: 1, borderWidth: 1, height: 50, width: W / 3, marginTop: 10, justifyContent: 'center' }}>
+                            <View style={{ borderColor: 'black', borderRadius: 1, borderWidth: 1, height: 50, width: W / 3, marginTop: 10, justifyContent: 'center', }}>
                                 <Text style={{ color: 'black', fontSize: 15, textAlign: 'center' }}>{post.semNo}</Text>
                             </View>
                         </TouchableOpacity>
