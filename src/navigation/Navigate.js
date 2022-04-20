@@ -9,6 +9,7 @@ import StudentLogin from '../screens/student/StudentLogin';
 import StudentDashboard from '../screens/student/StudentDashboard';
 import StudentSemPageDetails from '../screens/student/StudentSemPageDetails';
 import StudentBook from '../screens/student/StudentBook';
+import StudentSubjectDetails from '../screens/student/StudentSubjectDetails';
 
 const Stack = createNativeStackNavigator();
 const Navigate = () => {
@@ -19,6 +20,7 @@ const Navigate = () => {
         <Stack.Screen name="StudentDashboard" options={{ headerShown: false, }} component={StudentDashboard} />
         <Stack.Screen name="StudentSemPageDetails" options={{ headerShown: false, }} component={StudentSemPageDetails} />
         <Stack.Screen name="StudentBook" options={{ headerShown: false, }} component={StudentBook} />
+        <Stack.Screen name="StudentSubjectDetails" options={{ headerShown: false, }} component={StudentSubjectDetails} />
       </Stack.Navigator>
     </NavigationContainer>
   )
