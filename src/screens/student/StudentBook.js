@@ -51,7 +51,7 @@ const Sem1 = [
     {
         SemNo: 1,
         Subject_id: "ESC101",
-        Subject_Name: "Basic Electrical Engineering",
+        Subject_Name: "Basic Electrical",
         Subject_image: "https://firebasestorage.googleapis.com/v0/b/wallpaper-app-691fa.appspot.com/o/electrical.jpg?alt=media&token=1fc51318-8822-49c7-ba39-39cd66aa2405",
         Book: [
             {
@@ -71,8 +71,8 @@ const Sem1 = [
     {
         SemNo: 1,
         Subject_id: "ESC105",
-        Subject_Name: "Programming for Problem Solving-I",
-        Subject_image: "https://firebasestorage.googleapis.com/v0/b/wallpaper-app-691fa.appspot.com/o/physics.jpg?alt=media&token=b57c0302-9e5f-4e22-8cbc-593eafd6f47e",
+        Subject_Name: "C Programming",
+        Subject_image: "https://firebasestorage.googleapis.com/v0/b/taraknathapp.appspot.com/o/c.jpg?alt=media&token=9795afd7-1f94-45f1-bfca-108d8aa78512",
         Book: [
             {
                 Book_id: 1,
@@ -91,8 +91,8 @@ const Sem1 = [
     {
         SemNo: 1,
         Subject_id: "GSC101",
-        Subject_Name: "Essential Studies for Professionals-I",
-        Subject_image: "https://firebasestorage.googleapis.com/v0/b/wallpaper-app-691fa.appspot.com/o/physics.jpg?alt=media&token=b57c0302-9e5f-4e22-8cbc-593eafd6f47e",
+        Subject_Name: "ESP - I ",
+        Subject_image: "https://firebasestorage.googleapis.com/v0/b/taraknathapp.appspot.com/o/esp.jpg?alt=media&token=7652660c-0b69-4f0e-9b96-685fcfad6a90",
         Book: [
             {
                 Book_id: 1,
@@ -148,7 +148,7 @@ const Sem2 = [
     },
 ];
 
-console.warn(Sem1[0].Book[0].Book_Name)
+console.warn(Sem1[0].Book[0].Author)
 
 const StudentBook = ({ navigation, route }) => {
 
@@ -182,12 +182,12 @@ const StudentBook = ({ navigation, route }) => {
                 <ScrollView showsVerticalScrollIndicator={false}>
                     {
                         Sem1.map((post) => (
-                            <TouchableOpacity onPress={() => navigation.navigate('StudentSubjectDetails', { Subject_Name: post.Subject_Name, Subject_id: post.Subject_id, Book_Name: post.Book.Book_Name })}>
+                            <TouchableOpacity onPress={() => navigation.navigate('StudentSubjectDetails', { Subject_Name: post.Subject_Name, Subject_id: post.Subject_id, Book_Name: post.Book[0].Book_Name, Author:post.Book.Author })}>
                                 <View style={{ justifyContent: 'center', backgroundColor: 'white', height: 100, width: 370, marginTop: 10, borderBottomWidth: 1, borderColor: 'grey' }}>
                                     <View style={{ flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center' }}>
                                         <Image
                                             source={{ uri: String(post.Subject_image) }}
-                                            style={{ width: 100, height: 70, borderRadius: 18 }}></Image>
+                                            style={{ width: 90, height: 85, borderRadius: 18 }}></Image>
                                         <Text style={{ textAlign: 'justify', color: 'black', fontSize: 20 }}>{post.Subject_Name}</Text>
                                         <MaterialCommunityIcons
                                             name="chevron-right"

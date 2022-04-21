@@ -7,7 +7,8 @@ const StudentSubjectDetails = ({ navigation, route }) => {
     const Subject_Name = route.params.Subject_Name
     const Subject_id = route.params.Subject_id
     const Book_Name = route.params.Book_Name
-    console.warn(Book_Name)
+    const Author = route.params.Author
+    console.warn( Author)
 
     /*============================== For back button ==============================*/
     const handleBackButtonClick = () => {

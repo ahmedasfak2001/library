@@ -48,7 +48,7 @@ const StudentSemPageDetails = ({ navigation, route }) => {
                         </View>
                     </View>
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('StudentBook', { Sem_id, Sem_No, Sem_Name })}>
                     <View style={{ justifyContent: 'center', backgroundColor: 'white', height: 100, width: 370, marginTop: 10, borderBottomWidth: 1, borderColor: 'grey' }}>
                         <View style={{ flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center' }}>
                             <Image source={require('../../assets/notes.jpg')} style={{ width: 100, height: 70, borderRadius: 18 }}></Image>
@@ -62,7 +62,7 @@ const StudentSemPageDetails = ({ navigation, route }) => {
                         </View>
                     </View>
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('StudentBook', { Sem_id, Sem_No, Sem_Name })}>
                     <View style={{ justifyContent: 'center', backgroundColor: 'white', height: 100, width: 370, marginTop: 10, borderBottomWidth: 1, borderColor: 'grey' }}>
                         <View style={{ flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center' }}>
                             <Image source={require('../../assets/ques.jpg')} style={{ width: 70, height: 90, borderRadius: 18 }}></Image>
