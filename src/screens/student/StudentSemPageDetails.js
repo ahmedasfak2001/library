@@ -21,15 +21,14 @@ const StudentSemPageDetails = ({ navigation, route }) => {
     }
     return (
         <SafeAreaView style={{ flex: 1 }}>
-            <View style={{ flex: 1, backgroundColor: '#066cfa' }}>
+            <View style={{ flex: 1, backgroundColor: '#066cfa', justifyContent:'center' }}>
                 <TouchableOpacity onPress={() => handleBackButtonClick()} style={{ flexDirection: 'row' }}>
                     <Ionicons
                         name="chevron-back-outline"
                         color="white"
                         size={40}
-                        style={{ marginTop: 15 }}
                     />
-                    <Text style={{ fontSize: 20, color: 'white', marginTop: 23 }}>Back</Text>
+                    <Text style={{ fontSize: 25, color: 'white', }}>Back</Text>
                 </TouchableOpacity>
             </View>
             <View style={{ flex: 8, backgroundColor: '#DBF3FA', alignItems: 'center' }}>

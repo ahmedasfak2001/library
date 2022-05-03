@@ -54,7 +54,7 @@ const StudentDashboard = ({ navigation, route }) => {
 
     return (
         <SafeAreaView style={{ flex: 1 }}>
-            <View style={{ flex: 1, backgroundColor: '#066cfa' }}>
+            <View style={{ flex: 1, backgroundColor: '#066cfa', justifyContent:'center' }}>
                 <Ionicons
                     name='reorder-three'
                     size={60}

@@ -15,16 +15,30 @@ const Sem1 = [
         Subject_image: "https://firebasestorage.googleapis.com/v0/b/wallpaper-app-691fa.appspot.com/o/physics.jpg?alt=media&token=b57c0302-9e5f-4e22-8cbc-593eafd6f47e",
         Book: [
             {
-                Book_id: 1,
+                Book_id: "B1",
                 Book_Name: "Physics for Engineers",
                 Author: "M. R. Srinivasan",
-                Book_link: "",
+                Book_link: "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
             },
             {
-                Book_id: 2,
+                Book_id: "B2",
                 Book_Name: "Applied Physics for Engineers",
                 Author: "Mehta Neeraj",
-                Book_link: "",
+                Book_link: "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+            }
+        ],
+        Notes: [
+            {
+                Note_id: "N1",
+                Topic_Name: "Laws of Motion",
+                Teacher_Name: "Biswajeet Nayak",
+                Note_Link: "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+            },
+            {
+                Note_id: "N2",
+                Topic_Name: "Gravitational Force",
+                Teacher_Name: "Biswajeet Nayak",
+                Note_Link: "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
             }
         ],
     },
@@ -56,13 +70,13 @@ const Sem1 = [
         Book: [
             {
                 Book_id: 1,
-                Book_Name: "Mathematics for Engineers",
+                Book_Name: "Electrical for Engineers",
                 Author: "M. R. Srinivasan",
                 Book_link: "",
             },
             {
                 Book_id: 2,
-                Book_Name: "Applied Maths for Engineers",
+                Book_Name: "Applied Electrical for Engineers",
                 Author: "Mehta Neeraj",
                 Book_link: "",
             }
@@ -76,13 +90,13 @@ const Sem1 = [
         Book: [
             {
                 Book_id: 1,
-                Book_Name: "Mathematics for Engineers",
+                Book_Name: "C for Engineers",
                 Author: "M. R. Srinivasan",
                 Book_link: "",
             },
             {
                 Book_id: 2,
-                Book_Name: "Applied Maths for Engineers",
+                Book_Name: "Applied C for Engineers",
                 Author: "Mehta Neeraj",
                 Book_link: "",
             }
@@ -96,13 +110,13 @@ const Sem1 = [
         Book: [
             {
                 Book_id: 1,
-                Book_Name: "Mathematics for Engineers",
+                Book_Name: "ESP for Engineers",
                 Author: "M. R. Srinivasan",
                 Book_link: "",
             },
             {
                 Book_id: 2,
-                Book_Name: "Applied Maths for Engineers",
+                Book_Name: "Applied ESP for Engineers",
                 Author: "Mehta Neeraj",
                 Book_link: "",
             }
@@ -148,8 +162,6 @@ const Sem2 = [
     },
 ];
 
-console.warn(Sem1[0].Book[0].Author)
-
 const StudentBook = ({ navigation, route }) => {
 
     const Sem_id = route.params.Sem_id
@@ -165,15 +177,14 @@ const StudentBook = ({ navigation, route }) => {
 
     return (
         <SafeAreaView style={{ flex: 1 }}>
-            <View style={{ flex: 1, backgroundColor: '#066cfa' }}>
+            <View style={{ flex: 1, backgroundColor: '#066cfa', justifyContent: 'center' }}>
                 <TouchableOpacity onPress={() => handleBackButtonClick()} style={{ flexDirection: 'row' }}>
                     <Ionicons
                         name="chevron-back-outline"
                         color="white"
                         size={40}
-                        style={{ marginTop: 15 }}
                     />
-                    <Text style={{ fontSize: 20, color: 'white', marginTop: 23 }}>Back</Text>
+                    <Text style={{ fontSize: 25, color: 'white' }}>Back</Text>
                 </TouchableOpacity>
             </View>
             <View style={{ flex: 8, backgroundColor: '#DBF3FA', alignItems: 'center', }}>
@@ -182,7 +193,8 @@ const StudentBook = ({ navigation, route }) => {
                 <ScrollView showsVerticalScrollIndicator={false}>
                     {
                         Sem1.map((post) => (
-                            <TouchableOpacity onPress={() => navigation.navigate('StudentSubjectDetails', { Subject_Name: post.Subject_Name, Subject_id: post.Subject_id, Book_Name: post.Book[0].Book_Name, Author:post.Book.Author })}>
+
+                            <TouchableOpacity onPress={() => navigation.navigate('StudentSubjectDetails', { Subject_Name: post.Subject_Name, Subject_id: post.Subject_id, Book_Name: post.Book[0].Book_Name, Author: post.Book[0].Author, Book_Link: post.Book[0].Book_link })}>
                                 <View style={{ justifyContent: 'center', backgroundColor: 'white', height: 100, width: 370, marginTop: 10, borderBottomWidth: 1, borderColor: 'grey' }}>
                                     <View style={{ flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center' }}>
                                         <Image
